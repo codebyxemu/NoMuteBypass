@@ -1,0 +1,15 @@
+name: DisableSignWhileMuted
+version: '${project.version}'
+main: me.xemu.DisableSignsWhileMuted.Main
+api-version: 1.19
+description: Disable signs for muted players.
+
+softdepend:
+  - AdvancedBan
+  - LiteBans
+  - Essentials
+
+commands:
+  dswm:
+    description: Main Command
+    aliases: [disablesignswhilemuted, disablesignwhilemuted]

@@ -1,0 +1,7 @@
+system:
+  # Available Systems
+  # AdvancedBan
+  # LiteBans
+  # If you do not have the system installed it wont work properly.
+  active: "" # Write in the system name (CASE SENSITIVE)
+message: "&cYou are muted, and you cannot use signs now."
