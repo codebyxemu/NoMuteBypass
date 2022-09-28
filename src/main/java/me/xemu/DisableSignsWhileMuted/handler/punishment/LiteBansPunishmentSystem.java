@@ -7,12 +7,24 @@ import me.xemu.DisableSignsWhileMuted.handler.IPunishmentSystem;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
+import java.util.ArrayList;
 import java.util.UUID;
 
 public class LiteBansPunishmentSystem extends Handler implements IPunishmentSystem {
+	private static ArrayList<UUID> MutedList;
+
 	public LiteBansPunishmentSystem(Main main) {
 		super(main);
 
+		MutedList = new ArrayList<>();
+	}
+
+	public static ArrayList<UUID> getMutedList() {
+		return MutedList;
+	}
+
+	public static void setMutedList(ArrayList<UUID> mutedList) {
+		MutedList = mutedList;
 	}
 
 	@Override
@@ -22,17 +34,7 @@ public class LiteBansPunishmentSystem extends Handler implements IPunishmentSyst
 
 	@Override
 	public boolean isMuted(Player player) {
-		UUID uuid = player.getUniqueId();
-		final boolean[] bool = {false};
-
-		new BukkitRunnable() {
-			@Override
-			public void run() {
-				bool[0] = Database.get().isPlayerMuted(uuid, null);
-			}
-		}.runTaskAsynchronously(main);
-
-		return bool[0];
+		return getMutedList().contains(player.getUniqueId());
 	}
 
 }
