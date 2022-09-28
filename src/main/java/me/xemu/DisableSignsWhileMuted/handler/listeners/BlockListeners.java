@@ -1,7 +1,8 @@
 package me.xemu.DisableSignsWhileMuted.handler.listeners;
 
 import me.xemu.DisableSignsWhileMuted.Main;
-import me.xemu.DisableSignsWhileMuted.handler.IHandler;
+import me.xemu.DisableSignsWhileMuted.handler.Handler;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -13,7 +14,7 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BlockListeners extends IHandler implements Listener {
+public class BlockListeners extends Handler implements Listener {
 
 	private List<Material> signTypes;
 
@@ -59,6 +60,17 @@ public class BlockListeners extends IHandler implements Listener {
 
 		String message = ChatColor.translateAlternateColorCodes('&', main.getConfig().getString("message"));
 		player.sendMessage(message);
+
+		if (main.getConfig().getBoolean("message-staff.enabled")) {
+			String staffMessage = ChatColor.translateAlternateColorCodes('&', main.getConfig().getString("message-staff.message"));
+			staffMessage.replaceAll("<target>", player.getName());
+
+			Bukkit.getOnlinePlayers().forEach(staffPlayer -> {
+				if (staffPlayer.hasPermission("dswm.staff") || staffPlayer.isOp()) {
+					staffPlayer.sendMessage(staffMessage);
+				}
+			});
+		}
 
 		return;
 	}
