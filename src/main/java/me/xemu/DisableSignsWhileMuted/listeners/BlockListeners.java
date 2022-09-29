@@ -1,4 +1,4 @@
-package me.xemu.DisableSignsWhileMuted.handler.listeners;
+package me.xemu.DisableSignsWhileMuted.listeners;
 
 import me.xemu.DisableSignsWhileMuted.Main;
 import me.xemu.DisableSignsWhileMuted.handler.Handler;

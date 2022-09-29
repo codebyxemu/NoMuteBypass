@@ -1,6 +1,6 @@
 package me.xemu.DisableSignsWhileMuted;
 
-import me.xemu.DisableSignsWhileMuted.handler.core.Core;
+import me.xemu.DisableSignsWhileMuted.core.Core;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {

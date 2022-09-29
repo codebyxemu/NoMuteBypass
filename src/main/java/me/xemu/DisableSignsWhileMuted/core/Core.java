@@ -1,10 +1,12 @@
-package me.xemu.DisableSignsWhileMuted.handler.core;
+package me.xemu.DisableSignsWhileMuted.core;
 
 import me.xemu.DisableSignsWhileMuted.Main;
 import me.xemu.DisableSignsWhileMuted.handler.IPunishmentSystem;
-import me.xemu.DisableSignsWhileMuted.handler.commands.CommandDSWM;
-import me.xemu.DisableSignsWhileMuted.handler.listeners.BlockListeners;
-import me.xemu.DisableSignsWhileMuted.handler.listeners.BookListeners;
+import me.xemu.DisableSignsWhileMuted.commands.CommandDSWM;
+import me.xemu.DisableSignsWhileMuted.handler.punishment.AdvancedBanPunishmentSystem;
+import me.xemu.DisableSignsWhileMuted.handler.punishment.AquaCorePunishmentSystem;
+import me.xemu.DisableSignsWhileMuted.listeners.BlockListeners;
+import me.xemu.DisableSignsWhileMuted.listeners.BookListeners;
 import me.xemu.DisableSignsWhileMuted.handler.punishment.EssentialsPunishmentSystem;
 import me.xemu.DisableSignsWhileMuted.handler.punishment.litebans.LiteBansListeners;
 import me.xemu.DisableSignsWhileMuted.handler.punishment.litebans.LiteBansPunishmentSystem;
@@ -60,6 +62,8 @@ public class Core {
 		systems.put("Essentials", new EssentialsPunishmentSystem(main));
 		systems.put("LiteBans", new LiteBansPunishmentSystem(main));
 		systems.put("PhoenixCore", new PhoenixPunishmentSystem(main));
+		systems.put("AdvancedBan", new AdvancedBanPunishmentSystem(main));
+		systems.put("AquaCore", new AquaCorePunishmentSystem(main));
 
 		setSystem(systems.get(system));
 	}

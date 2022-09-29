@@ -1,7 +1,7 @@
-package me.xemu.DisableSignsWhileMuted.handler.commands;
+package me.xemu.DisableSignsWhileMuted.commands;
 
 import me.xemu.DisableSignsWhileMuted.Main;
-import me.xemu.DisableSignsWhileMuted.handler.utils.CommandTarget;
+import me.xemu.DisableSignsWhileMuted.utils.CommandTarget;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
