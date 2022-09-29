@@ -4,7 +4,9 @@ import me.xemu.DisableSignsWhileMuted.Main;
 import me.xemu.DisableSignsWhileMuted.handler.IPunishmentSystem;
 import me.xemu.DisableSignsWhileMuted.handler.commands.CommandDSWM;
 import me.xemu.DisableSignsWhileMuted.handler.listeners.BlockListeners;
+import me.xemu.DisableSignsWhileMuted.handler.listeners.BookListeners;
 import me.xemu.DisableSignsWhileMuted.handler.punishment.EssentialsPunishmentSystem;
+import me.xemu.DisableSignsWhileMuted.handler.punishment.litebans.LiteBansListeners;
 import me.xemu.DisableSignsWhileMuted.handler.punishment.litebans.LiteBansPunishmentSystem;
 import me.xemu.DisableSignsWhileMuted.handler.punishment.PhoenixPunishmentSystem;
 import org.bukkit.Bukkit;
@@ -31,6 +33,9 @@ public class Core {
 
 	public void listeners() {
 		main.getServer().getPluginManager().registerEvents(new BlockListeners(main), main);
+		main.getServer().getPluginManager().registerEvents(new BookListeners(main), main);
+
+		new LiteBansListeners(main);
 	}
 
 	private IPunishmentSystem system;
