@@ -8,6 +8,7 @@ softdepend:
   - AdvancedBan
   - LiteBans
   - Essentials
+  - UltraPunishments
 
 commands:
   dswm:

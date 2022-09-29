@@ -1,4 +1,4 @@
-package me.xemu.DisableSignsWhileMuted.handler.punishment;
+package me.xemu.DisableSignsWhileMuted.handler.punishment.litebans;
 
 import litebans.api.Database;
 import me.xemu.DisableSignsWhileMuted.Main;
@@ -11,20 +11,8 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 public class LiteBansPunishmentSystem extends Handler implements IPunishmentSystem {
-	private static ArrayList<UUID> MutedList;
-
 	public LiteBansPunishmentSystem(Main main) {
 		super(main);
-
-		MutedList = new ArrayList<>();
-	}
-
-	public static ArrayList<UUID> getMutedList() {
-		return MutedList;
-	}
-
-	public static void setMutedList(ArrayList<UUID> mutedList) {
-		MutedList = mutedList;
 	}
 
 	@Override
@@ -34,7 +22,7 @@ public class LiteBansPunishmentSystem extends Handler implements IPunishmentSyst
 
 	@Override
 	public boolean isMuted(Player player) {
-		return getMutedList().contains(player.getUniqueId());
+		return LiteBansListeners.getMutelist().contains(player.getUniqueId());
 	}
 
 }

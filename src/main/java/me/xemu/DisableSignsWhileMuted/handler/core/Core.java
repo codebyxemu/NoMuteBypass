@@ -5,7 +5,7 @@ import me.xemu.DisableSignsWhileMuted.handler.IPunishmentSystem;
 import me.xemu.DisableSignsWhileMuted.handler.commands.CommandDSWM;
 import me.xemu.DisableSignsWhileMuted.handler.listeners.BlockListeners;
 import me.xemu.DisableSignsWhileMuted.handler.punishment.EssentialsPunishmentSystem;
-import me.xemu.DisableSignsWhileMuted.handler.punishment.LiteBansPunishmentSystem;
+import me.xemu.DisableSignsWhileMuted.handler.punishment.litebans.LiteBansPunishmentSystem;
 import me.xemu.DisableSignsWhileMuted.handler.punishment.PhoenixPunishmentSystem;
 import org.bukkit.Bukkit;
 

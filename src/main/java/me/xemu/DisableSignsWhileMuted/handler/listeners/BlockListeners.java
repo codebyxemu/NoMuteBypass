@@ -2,7 +2,8 @@ package me.xemu.DisableSignsWhileMuted.handler.listeners;
 
 import me.xemu.DisableSignsWhileMuted.Main;
 import me.xemu.DisableSignsWhileMuted.handler.Handler;
-import me.xemu.DisableSignsWhileMuted.handler.punishment.LiteBansPunishmentSystem;
+import me.xemu.DisableSignsWhileMuted.handler.punishment.litebans.LiteBansListeners;
+import me.xemu.DisableSignsWhileMuted.handler.punishment.litebans.LiteBansPunishmentSystem;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -54,7 +55,7 @@ public class BlockListeners extends Handler implements Listener {
 
 		boolean muted = false;
 		if (main.getCore().getSystem() instanceof LiteBansPunishmentSystem) {
-			if (LiteBansPunishmentSystem.getMutedList().contains(player.getUniqueId())) {
+			if (LiteBansListeners.getMutelist().contains(player.getUniqueId())) {
 				muted = true;
 			}
 		} else if (main.getCore().getSystem().isMuted(player)) {
