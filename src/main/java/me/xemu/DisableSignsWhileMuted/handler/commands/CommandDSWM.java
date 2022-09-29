@@ -1,6 +1,7 @@
 package me.xemu.DisableSignsWhileMuted.handler.commands;
 
 import me.xemu.DisableSignsWhileMuted.Main;
+import me.xemu.DisableSignsWhileMuted.handler.utils.CommandTarget;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -40,12 +41,13 @@ public class CommandDSWM implements CommandExecutor {
 			}
 		} else if (args.length == 2) {
 			if (args[0].equalsIgnoreCase("check") && player.hasPermission("dswm.check")) {
-				Player user = Bukkit.getPlayer(args[1]);
-
-				if (user == null) {
-					player.sendMessage(ChatColor.RED + "Invalid Target: " + args[1]);
+				CommandTarget target = new CommandTarget(Bukkit.getPlayer(args[1]));
+				if (target.isPlayerNull()) {
+					player.sendMessage(ChatColor.RED + "Invalid Command Target " + args[1]);
 					return true;
 				}
+
+				Player user = target.getPlayer();
 
 				boolean muted = main.getCore().getSystem().isMuted(user);
 				String status = "Not Muted";

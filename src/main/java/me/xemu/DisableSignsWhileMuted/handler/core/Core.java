@@ -5,6 +5,8 @@ import me.xemu.DisableSignsWhileMuted.handler.IPunishmentSystem;
 import me.xemu.DisableSignsWhileMuted.handler.commands.CommandDSWM;
 import me.xemu.DisableSignsWhileMuted.handler.listeners.BlockListeners;
 import me.xemu.DisableSignsWhileMuted.handler.punishment.EssentialsPunishmentSystem;
+import me.xemu.DisableSignsWhileMuted.handler.punishment.litebans.LiteBansPunishmentSystem;
+import me.xemu.DisableSignsWhileMuted.handler.punishment.PhoenixPunishmentSystem;
 import org.bukkit.Bukkit;
 
 import java.util.HashMap;
@@ -51,6 +53,8 @@ public class Core {
 		HashMap<String, IPunishmentSystem> systems = new HashMap<>();
 
 		systems.put("Essentials", new EssentialsPunishmentSystem(main));
+		systems.put("LiteBans", new LiteBansPunishmentSystem(main));
+		systems.put("PhoenixCore", new PhoenixPunishmentSystem(main));
 
 		setSystem(systems.get(system));
 	}

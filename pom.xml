@@ -73,6 +73,10 @@
             <id>essentials-repo</id>
             <url>https://repo.essentialsx.net/releases</url>
         </repository>
+        <repository>
+            <id>arim-mvn-agpl3</id>
+            <url>https://mvn-repo.arim.space/affero-gpl3/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -104,6 +108,13 @@
             <artifactId>EssentialsX</artifactId>
             <version>2.19.7</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>me.Xemu.DisableSignWhileMuted.Dependency</groupId>
+            <artifactId>dependency-pxApi</artifactId>
+            <version>dependency-build</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/local_dependencies/pxAPI.jar</systemPath>
         </dependency>
     </dependencies>
 </project>
