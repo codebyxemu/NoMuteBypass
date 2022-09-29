@@ -1,10 +1,13 @@
 system:
   # Available Systems
-  # AdvancedBan
+  # Essentials
   # LiteBans
+  # Phoenix
   # If you do not have the system installed it wont work properly.
   active: "" # Write in the system name (CASE SENSITIVE)
 message: "&cYou are muted, and you cannot use signs now."
 message-staff:
   enabled: false
   message: "&c<target> attempted to use a sign, but cannot because they are muted."
+
+disable-book-edit: true
