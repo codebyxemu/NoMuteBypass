@@ -1,6 +1,6 @@
 package me.xemu.DisableSignsWhileMuted;
 
-import me.xemu.DisableSignsWhileMuted.handler.core.Core;
+import me.xemu.DisableSignsWhileMuted.core.Core;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
@@ -10,22 +10,13 @@ public class Main extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		this.core = new Core(this);
-		Core.log("Plugin is loading...");
 
 		core.handleConfig();
 		core.handlePunishmentSystem();
-
-		if (core.getSystem() == null) {
-			Core.log("Did not find any Punishment System.");
-		} else {
-			Core.log("Punishment System: " + core.getSystem().getName());
-		}
-
-		Core.log("Loading listeners & commands.");
 		core.commands();
 		core.listeners();
 
-		Core.log("Plugin loaded & enabled! Enjoy!");
+		core.sendDetailedStartupMessage();
 	}
 
 	@Override

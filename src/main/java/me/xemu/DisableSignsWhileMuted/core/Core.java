@@ -1,15 +1,18 @@
-package me.xemu.DisableSignsWhileMuted.handler.core;
+package me.xemu.DisableSignsWhileMuted.core;
 
 import me.xemu.DisableSignsWhileMuted.Main;
 import me.xemu.DisableSignsWhileMuted.handler.IPunishmentSystem;
-import me.xemu.DisableSignsWhileMuted.handler.commands.CommandDSWM;
-import me.xemu.DisableSignsWhileMuted.handler.listeners.BlockListeners;
-import me.xemu.DisableSignsWhileMuted.handler.listeners.BookListeners;
+import me.xemu.DisableSignsWhileMuted.commands.CommandDSWM;
+import me.xemu.DisableSignsWhileMuted.handler.punishment.AdvancedBanPunishmentSystem;
+import me.xemu.DisableSignsWhileMuted.handler.punishment.AquaCorePunishmentSystem;
+import me.xemu.DisableSignsWhileMuted.listeners.BlockListeners;
+import me.xemu.DisableSignsWhileMuted.listeners.BookListeners;
 import me.xemu.DisableSignsWhileMuted.handler.punishment.EssentialsPunishmentSystem;
 import me.xemu.DisableSignsWhileMuted.handler.punishment.litebans.LiteBansListeners;
 import me.xemu.DisableSignsWhileMuted.handler.punishment.litebans.LiteBansPunishmentSystem;
 import me.xemu.DisableSignsWhileMuted.handler.punishment.PhoenixPunishmentSystem;
 import org.bukkit.Bukkit;
+import org.bukkit.command.ConsoleCommandSender;
 
 import java.util.HashMap;
 
@@ -60,6 +63,8 @@ public class Core {
 		systems.put("Essentials", new EssentialsPunishmentSystem(main));
 		systems.put("LiteBans", new LiteBansPunishmentSystem(main));
 		systems.put("PhoenixCore", new PhoenixPunishmentSystem(main));
+		systems.put("AdvancedBan", new AdvancedBanPunishmentSystem(main));
+		systems.put("AquaCore", new AquaCorePunishmentSystem(main));
 
 		setSystem(systems.get(system));
 	}
@@ -68,4 +73,34 @@ public class Core {
 		main.getConfig().options().copyDefaults(true);
 		main.saveConfig();
 	}
+
+	public void sendDetailedStartupMessage() {
+
+		ConsoleCommandSender s = Bukkit.getConsoleSender();
+
+		String activeSystem = "";
+
+		if (getSystem() == null) {
+			activeSystem = "No System Setup";
+		} else {
+			activeSystem = getSystem().getName();
+		}
+
+		String[] message = new String[]{
+				"§8[]========[§6Disable§eSigns§6While§eMuted§8]========[]",
+				"§8| §6Information:",
+				"§8|    §6Plugin Version: §e" + main.getDescription().getVersion(),
+				"§8|    §6Developer: §eXemu",
+				"§8|    §6Active System: §e" + activeSystem,
+				"§8| §6Support:",
+				"§8|    §6Discord: §ehttps://discord.gg/mhzrNx8Ce3",
+				"§8|    §6SpigotMC Username: §eXemu",
+				"§8[]========[§6Disable§eSigns§6While§eMuted§8]========[]",
+		};
+
+		for (String part : message) {
+			s.sendMessage(part);
+		}
+	}
+
 }

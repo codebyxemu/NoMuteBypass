@@ -1,4 +1,4 @@
-package me.xemu.DisableSignsWhileMuted.handler.utils;
+package me.xemu.DisableSignsWhileMuted.utils;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;

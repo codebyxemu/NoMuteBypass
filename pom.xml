@@ -6,7 +6,7 @@
 
     <groupId>me.Xemu.DisableSignWhileMuted</groupId>
     <artifactId>DisableSignWhileMuted</artifactId>
-    <version>v1.0.3</version>
+    <version>v1.0.5</version>
     <packaging>jar</packaging>
 
     <name>DisableSignWhileMuted</name>
@@ -115,6 +115,13 @@
             <version>dependency-build</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/local_dependencies/pxAPI.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>me.Xemu.DisableSignWhileMuted.Dependency</groupId>
+            <artifactId>dependency-AquaCoreAPI</artifactId>
+            <version>dependency-build</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/local_dependencies/AquaCoreAPI.jar</systemPath>
         </dependency>
     </dependencies>
 </project>

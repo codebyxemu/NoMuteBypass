@@ -1,21 +1,11 @@
-package me.xemu.DisableSignsWhileMuted.handler.listeners;
+package me.xemu.DisableSignsWhileMuted.listeners;
 
 import me.xemu.DisableSignsWhileMuted.Main;
 import me.xemu.DisableSignsWhileMuted.handler.Handler;
-import me.xemu.DisableSignsWhileMuted.handler.punishment.litebans.LiteBansListeners;
-import me.xemu.DisableSignsWhileMuted.handler.punishment.litebans.LiteBansPunishmentSystem;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Material;
-import org.bukkit.block.Block;
-import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.player.PlayerEditBookEvent;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class BookListeners extends Handler implements Listener {
 
