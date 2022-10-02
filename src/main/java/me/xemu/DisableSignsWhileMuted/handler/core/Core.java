@@ -1,4 +1,4 @@
-package me.xemu.DisableSignsWhileMuted.core;
+package me.xemu.DisableSignsWhileMuted.handler.core;
 
 import me.xemu.DisableSignsWhileMuted.Main;
 import me.xemu.DisableSignsWhileMuted.handler.IPunishmentSystem;

@@ -1,4 +1,4 @@
-name: DisableSignWhileMuted
+name: DisableSignsWhileMuted
 version: '${project.version}'
 main: me.xemu.DisableSignsWhileMuted.Main
 api-version: 1.19
@@ -10,6 +10,7 @@ softdepend:
   - Essentials
   - UltraPunishments
   - LibertyBans
+  - AquaCore
 
 commands:
   dswm:
