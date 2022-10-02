@@ -52,7 +52,7 @@
                         <relocation>
                             <pattern>org.bstats</pattern>
                             <!-- Replace this with your package! -->
-                            <shadedPattern>me.xemu.DisableSignsWhileMuted</shadedPattern>
+                            <shadedPattern>me.xemu</shadedPattern>
                         </relocation>
                     </relocations>
                 </configuration>
@@ -112,6 +112,7 @@
             <groupId>space.arim.libertybans</groupId>
             <artifactId>bans-api</artifactId>
             <version>1.0.4</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.gitlab.ruany</groupId>

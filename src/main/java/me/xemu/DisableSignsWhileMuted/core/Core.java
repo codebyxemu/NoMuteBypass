@@ -3,14 +3,15 @@ package me.xemu.DisableSignsWhileMuted.core;
 import me.xemu.DisableSignsWhileMuted.Main;
 import me.xemu.DisableSignsWhileMuted.handler.IPunishmentSystem;
 import me.xemu.DisableSignsWhileMuted.commands.CommandDSWM;
-import me.xemu.DisableSignsWhileMuted.handler.metrics.MetricsHandler;
 import me.xemu.DisableSignsWhileMuted.handler.punishment.*;
 import me.xemu.DisableSignsWhileMuted.listeners.BlockListeners;
 import me.xemu.DisableSignsWhileMuted.listeners.BookListeners;
 import me.xemu.DisableSignsWhileMuted.handler.punishment.litebans.LiteBansListeners;
 import me.xemu.DisableSignsWhileMuted.handler.punishment.litebans.LiteBansPunishmentSystem;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.command.ConsoleCommandSender;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.HashMap;
 
@@ -39,10 +40,6 @@ public class Core {
 		new LiteBansListeners(main);
 	}
 
-	private MetricsHandler metricsHandler = new MetricsHandler(main);
-	public void metrics() {
-		metricsHandler.handleMetrics();
-	}
 
 	private IPunishmentSystem system;
 
@@ -107,4 +104,9 @@ public class Core {
 		}
 	}
 
+	public void metrics(JavaPlugin plugin) {
+		final int pluginId = 16547;
+		final Metrics metrics = new Metrics(plugin, pluginId);
+		Core.log("bStats handling completed.");
+	}
 }

@@ -1,7 +1,11 @@
 package me.xemu.DisableSignsWhileMuted;
 
 import me.xemu.DisableSignsWhileMuted.core.Core;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Main extends JavaPlugin {
 
@@ -15,7 +19,7 @@ public class Main extends JavaPlugin {
 		core.handlePunishmentSystem();
 		core.commands();
 		core.listeners();
-		core.metrics();
+		core.metrics(this);
 
 		core.sendDetailedStartupMessage();
 	}
