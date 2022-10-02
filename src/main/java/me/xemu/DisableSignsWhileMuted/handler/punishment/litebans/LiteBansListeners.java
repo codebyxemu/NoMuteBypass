@@ -44,17 +44,19 @@ public class LiteBansListeners extends Handler implements Listener {
 
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event) {
-		UUID uuid = event.getPlayer().getUniqueId();
+		if (main.getCore().getSystem() instanceof LiteBansPunishmentSystem) {
+			UUID uuid = event.getPlayer().getUniqueId();
 
-		new BukkitRunnable() {
-			@Override
-			public void run() {
-				boolean isMuted = Database.get().isPlayerMuted(uuid, null);
-				if (isMuted) {
-					mutelist.add(uuid);
+			new BukkitRunnable() {
+				@Override
+				public void run() {
+					boolean isMuted = Database.get().isPlayerMuted(uuid, null);
+					if (isMuted) {
+						mutelist.add(uuid);
+					}
 				}
-			}
-		}.runTaskAsynchronously(main);
+			}.runTaskAsynchronously(main);
+		}
 	}
 
 }

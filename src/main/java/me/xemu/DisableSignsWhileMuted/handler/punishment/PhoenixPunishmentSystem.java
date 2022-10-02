@@ -21,5 +21,4 @@ public class PhoenixPunishmentSystem extends Handler implements IPunishmentSyste
 	public boolean isMuted(Player player) {
 		return PhoenixAPI.INSTANCE.isMuted(player.getUniqueId());
 	}
-
 }

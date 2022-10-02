@@ -3,14 +3,12 @@ package me.xemu.DisableSignsWhileMuted.core;
 import me.xemu.DisableSignsWhileMuted.Main;
 import me.xemu.DisableSignsWhileMuted.handler.IPunishmentSystem;
 import me.xemu.DisableSignsWhileMuted.commands.CommandDSWM;
-import me.xemu.DisableSignsWhileMuted.handler.punishment.AdvancedBanPunishmentSystem;
-import me.xemu.DisableSignsWhileMuted.handler.punishment.AquaCorePunishmentSystem;
+import me.xemu.DisableSignsWhileMuted.handler.metrics.MetricsHandler;
+import me.xemu.DisableSignsWhileMuted.handler.punishment.*;
 import me.xemu.DisableSignsWhileMuted.listeners.BlockListeners;
 import me.xemu.DisableSignsWhileMuted.listeners.BookListeners;
-import me.xemu.DisableSignsWhileMuted.handler.punishment.EssentialsPunishmentSystem;
 import me.xemu.DisableSignsWhileMuted.handler.punishment.litebans.LiteBansListeners;
 import me.xemu.DisableSignsWhileMuted.handler.punishment.litebans.LiteBansPunishmentSystem;
-import me.xemu.DisableSignsWhileMuted.handler.punishment.PhoenixPunishmentSystem;
 import org.bukkit.Bukkit;
 import org.bukkit.command.ConsoleCommandSender;
 
@@ -41,6 +39,11 @@ public class Core {
 		new LiteBansListeners(main);
 	}
 
+	private MetricsHandler metricsHandler = new MetricsHandler(main);
+	public void metrics() {
+		metricsHandler.handleMetrics();
+	}
+
 	private IPunishmentSystem system;
 
 	public IPunishmentSystem getSystem() {
@@ -65,6 +68,7 @@ public class Core {
 		systems.put("PhoenixCore", new PhoenixPunishmentSystem(main));
 		systems.put("AdvancedBan", new AdvancedBanPunishmentSystem(main));
 		systems.put("AquaCore", new AquaCorePunishmentSystem(main));
+		systems.put("LibertyBans", new LibertyBansPunishmentSystem(main));
 
 		setSystem(systems.get(system));
 	}

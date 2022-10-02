@@ -9,6 +9,7 @@ softdepend:
   - LiteBans
   - Essentials
   - UltraPunishments
+  - LibertyBans
 
 commands:
   dswm:

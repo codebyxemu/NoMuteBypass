@@ -15,6 +15,7 @@ public class Main extends JavaPlugin {
 		core.handlePunishmentSystem();
 		core.commands();
 		core.listeners();
+		core.metrics();
 
 		core.sendDetailedStartupMessage();
 	}
