@@ -2,6 +2,7 @@ package me.xemu.DisableSignsWhileMuted.handler.punishment;
 
 import com.earth2me.essentials.perm.IPermissionsHandler;
 import me.leoko.advancedban.manager.PunishmentManager;
+import me.leoko.advancedban.manager.UUIDManager;
 import me.xemu.DisableSignsWhileMuted.Main;
 import me.xemu.DisableSignsWhileMuted.handler.Handler;
 import me.xemu.DisableSignsWhileMuted.handler.IPunishmentSystem;
@@ -19,6 +20,6 @@ public class AdvancedBanPunishmentSystem extends Handler implements IPunishmentS
 
 	@Override
 	public boolean isMuted(Player player) {
-		return PunishmentManager.get().isMuted(player.getUniqueId().toString());
+		return PunishmentManager.get().isMuted(UUIDManager.get().getUUID(player.getName()));
 	}
 }
