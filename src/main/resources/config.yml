@@ -1,8 +1,6 @@
 system:
-  # Available Systems
-  # Essentials
-  # LiteBans
-  # Phoenix
+  # List of available punishment systems can be found here:
+  # https://docs.xemu.codes/disablesignswhilemuted-wiki/supported-systems
   # If you do not have the system installed it wont work properly.
   active: "" # Write in the system name (CASE SENSITIVE)
 message: "&cYou are muted, and you cannot use signs now."

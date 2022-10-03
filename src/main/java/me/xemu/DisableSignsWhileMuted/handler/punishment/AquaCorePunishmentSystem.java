@@ -6,6 +6,7 @@ import me.xemu.DisableSignsWhileMuted.handler.Handler;
 import me.xemu.DisableSignsWhileMuted.handler.IPunishmentSystem;
 import org.bukkit.entity.Player;
 
+/* AquaCore by FaceSlap02 */
 public class AquaCorePunishmentSystem extends Handler implements IPunishmentSystem {
 	public AquaCorePunishmentSystem(Main main) {
 		super(main);

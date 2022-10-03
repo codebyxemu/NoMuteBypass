@@ -13,6 +13,7 @@ import space.arim.omnibus.OmnibusProvider;
 
 import java.util.Optional;
 
+/* LibertyBans by A248*/
 public class LibertyBansPunishmentSystem extends Handler implements IPunishmentSystem {
 
 	private Omnibus omnibus;

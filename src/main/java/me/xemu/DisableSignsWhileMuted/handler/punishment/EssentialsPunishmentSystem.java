@@ -6,6 +6,7 @@ import me.xemu.DisableSignsWhileMuted.handler.Handler;
 import me.xemu.DisableSignsWhileMuted.handler.IPunishmentSystem;
 import org.bukkit.entity.Player;
 
+/* Essentials/EssentialsX by Essentials */
 public class EssentialsPunishmentSystem extends Handler implements IPunishmentSystem {
 	private Essentials essentials;
 	public EssentialsPunishmentSystem(Main main) {

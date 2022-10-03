@@ -6,7 +6,7 @@
 
     <groupId>me.Xemu.DisableSignWhileMuted</groupId>
     <artifactId>DisableSignWhileMuted</artifactId>
-    <version>v1.1.0</version>
+    <version>v1.3.0</version>
     <packaging>jar</packaging>
 
     <name>DisableSignWhileMuted</name>
@@ -99,6 +99,14 @@
             <id>arim-mvn-agpl3</id>
             <url>https://mvn-repo.arim.space/affero-gpl3/</url>
         </repository>
+        <repository>
+            <id>simplix</id>
+            <url>https://repo.simplix.dev/repository/simplixsoft-public/</url>
+        </repository>
+        <repository>
+            <id>networkmanager-repo</id>
+            <url>https://repo.networkmanager.xyz/repository/maven-public/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -156,6 +164,12 @@
             <artifactId>bstats-bukkit</artifactId>
             <version>3.0.0</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>dev.simplix.plugins</groupId>
+            <artifactId>punishcontrol-api</artifactId>
+            <version>2.0.1</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>

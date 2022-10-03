@@ -8,6 +8,7 @@ import me.xemu.DisableSignsWhileMuted.handler.Handler;
 import me.xemu.DisableSignsWhileMuted.handler.IPunishmentSystem;
 import org.bukkit.entity.Player;
 
+/* AdvancedBan by Leoko.dev */
 public class AdvancedBanPunishmentSystem extends Handler implements IPunishmentSystem {
 	public AdvancedBanPunishmentSystem(Main main) {
 		super(main);

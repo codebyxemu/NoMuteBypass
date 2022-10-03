@@ -66,6 +66,7 @@ public class Core {
 		systems.put("AdvancedBan", new AdvancedBanPunishmentSystem(main));
 		systems.put("AquaCore", new AquaCorePunishmentSystem(main));
 		systems.put("LibertyBans", new LibertyBansPunishmentSystem(main));
+		systems.put("PunishControl", new PunishControlPunishmentSystem(main));
 
 		setSystem(systems.get(system));
 	}

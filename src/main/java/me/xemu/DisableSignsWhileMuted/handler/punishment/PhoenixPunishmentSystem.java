@@ -6,6 +6,7 @@ import me.xemu.DisableSignsWhileMuted.handler.Handler;
 import me.xemu.DisableSignsWhileMuted.handler.IPunishmentSystem;
 import org.bukkit.entity.Player;
 
+/* PhoenixCore by Px-Development */
 public class PhoenixPunishmentSystem extends Handler implements IPunishmentSystem {
 	public PhoenixPunishmentSystem(Main main) {
 		super(main);
