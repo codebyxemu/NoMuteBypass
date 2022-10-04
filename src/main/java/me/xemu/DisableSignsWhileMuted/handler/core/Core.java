@@ -52,7 +52,11 @@ public class Core {
 	}
 
 	public static void log(String msg) {
-		Bukkit.getLogger().info("[DisableSignsWhileMuted] " + msg);
+		ConsoleCommandSender s = Bukkit.getConsoleSender();
+
+		String prefix = "§8[§6Disable§eSigns§6While§eMuted§8]";
+
+		s.sendMessage(prefix + " " + msg);
 	}
 
 	public void handlePunishmentSystem() {
