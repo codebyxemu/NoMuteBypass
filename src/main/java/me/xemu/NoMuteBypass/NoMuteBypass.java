@@ -1,9 +1,9 @@
-package me.xemu.DisableSignsWhileMuted;
+package me.xemu.NoMuteBypass;
 
-import me.xemu.DisableSignsWhileMuted.handler.core.Core;
+import me.xemu.NoMuteBypass.handler.core.Core;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class Main extends JavaPlugin {
+public class NoMuteBypass extends JavaPlugin {
 
 	private Core core;
 

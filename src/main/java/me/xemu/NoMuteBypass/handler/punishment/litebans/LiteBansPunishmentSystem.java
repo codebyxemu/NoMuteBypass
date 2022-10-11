@@ -1,13 +1,13 @@
-package me.xemu.DisableSignsWhileMuted.handler.punishment.litebans;
+package me.xemu.NoMuteBypass.handler.punishment.litebans;
 
-import me.xemu.DisableSignsWhileMuted.Main;
-import me.xemu.DisableSignsWhileMuted.handler.Handler;
-import me.xemu.DisableSignsWhileMuted.handler.IPunishmentSystem;
+import me.xemu.NoMuteBypass.NoMuteBypass;
+import me.xemu.NoMuteBypass.handler.Handler;
+import me.xemu.NoMuteBypass.handler.IPunishmentSystem;
 import org.bukkit.entity.Player;
 
 public class LiteBansPunishmentSystem extends Handler implements IPunishmentSystem {
-	public LiteBansPunishmentSystem(Main main) {
-		super(main);
+	public LiteBansPunishmentSystem(NoMuteBypass noMuteBypass) {
+		super(noMuteBypass);
 	}
 
 	@Override

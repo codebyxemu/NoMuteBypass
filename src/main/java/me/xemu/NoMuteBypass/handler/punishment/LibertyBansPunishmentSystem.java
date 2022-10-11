@@ -1,8 +1,8 @@
-package me.xemu.DisableSignsWhileMuted.handler.punishment;
+package me.xemu.NoMuteBypass.handler.punishment;
 
-import me.xemu.DisableSignsWhileMuted.Main;
-import me.xemu.DisableSignsWhileMuted.handler.Handler;
-import me.xemu.DisableSignsWhileMuted.handler.IPunishmentSystem;
+import me.xemu.NoMuteBypass.NoMuteBypass;
+import me.xemu.NoMuteBypass.handler.Handler;
+import me.xemu.NoMuteBypass.handler.IPunishmentSystem;
 import org.bukkit.entity.Player;
 import space.arim.libertybans.api.LibertyBans;
 import space.arim.libertybans.api.NetworkAddress;
@@ -19,8 +19,8 @@ public class LibertyBansPunishmentSystem extends Handler implements IPunishmentS
 	private Omnibus omnibus;
 	private LibertyBans libertyBans;
 
-	public LibertyBansPunishmentSystem(Main main) {
-		super(main);
+	public LibertyBansPunishmentSystem(NoMuteBypass noMuteBypass) {
+		super(noMuteBypass);
 		this.omnibus = OmnibusProvider.getOmnibus();
 		this.libertyBans = omnibus.getRegistry().getProvider(LibertyBans.class).get();
 	}

@@ -1,16 +1,15 @@
-package me.xemu.DisableSignsWhileMuted.handler.punishment;
+package me.xemu.NoMuteBypass.handler.punishment;
 
 import dev.phoenix.phoenix.PhoenixAPI;
-import me.xemu.DisableSignsWhileMuted.Main;
-import me.xemu.DisableSignsWhileMuted.handler.Handler;
-import me.xemu.DisableSignsWhileMuted.handler.IPunishmentSystem;
+import me.xemu.NoMuteBypass.NoMuteBypass;
+import me.xemu.NoMuteBypass.handler.Handler;
+import me.xemu.NoMuteBypass.handler.IPunishmentSystem;
 import org.bukkit.entity.Player;
 
 /* PhoenixCore by Px-Development */
 public class PhoenixPunishmentSystem extends Handler implements IPunishmentSystem {
-	public PhoenixPunishmentSystem(Main main) {
-		super(main);
-
+	public PhoenixPunishmentSystem(NoMuteBypass noMuteBypass) {
+		super(noMuteBypass);
 	}
 
 	@Override

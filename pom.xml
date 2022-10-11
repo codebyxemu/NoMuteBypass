@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>me.Xemu.DisableSignWhileMuted</groupId>
-    <artifactId>DisableSignWhileMuted</artifactId>
-    <version>v1.3.0</version>
+    <groupId>me.Xemu.NoMuteBypass</groupId>
+    <artifactId>NoMuteBypass</artifactId>
+    <version>v2.0.0</version>
     <packaging>jar</packaging>
 
-    <name>DisableSignWhileMuted</name>
+    <name>NoMuteBypass</name>
 
     <properties>
         <java.version>1.8</java.version>
@@ -68,7 +68,7 @@
         </plugins>
         <resources>
             <resource>
-                <directory>src/main/resources</directory>
+                <directory>src/noMuteBypass/resources</directory>
                 <filtering>true</filtering>
             </resource>
         </resources>
@@ -146,14 +146,14 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>me.Xemu.DisableSignWhileMuted.Dependency</groupId>
+            <groupId>me.Xemu.NoMuteBypass.Dependency</groupId>
             <artifactId>dependency-pxApi</artifactId>
             <version>dependency-build</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/local_dependencies/pxAPI.jar</systemPath>
         </dependency>
         <dependency>
-            <groupId>me.Xemu.DisableSignWhileMuted.Dependency</groupId>
+            <groupId>me.Xemu.NoMuteBypass.Dependency</groupId>
             <artifactId>dependency-AquaCoreAPI</artifactId>
             <version>dependency-build</version>
             <scope>system</scope>

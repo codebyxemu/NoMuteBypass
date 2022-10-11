@@ -1,17 +1,16 @@
-package me.xemu.DisableSignsWhileMuted.handler.punishment;
+package me.xemu.NoMuteBypass.handler.punishment;
 
-import com.earth2me.essentials.perm.IPermissionsHandler;
 import me.leoko.advancedban.manager.PunishmentManager;
 import me.leoko.advancedban.manager.UUIDManager;
-import me.xemu.DisableSignsWhileMuted.Main;
-import me.xemu.DisableSignsWhileMuted.handler.Handler;
-import me.xemu.DisableSignsWhileMuted.handler.IPunishmentSystem;
+import me.xemu.NoMuteBypass.NoMuteBypass;
+import me.xemu.NoMuteBypass.handler.Handler;
+import me.xemu.NoMuteBypass.handler.IPunishmentSystem;
 import org.bukkit.entity.Player;
 
 /* AdvancedBan by Leoko.dev */
 public class AdvancedBanPunishmentSystem extends Handler implements IPunishmentSystem {
-	public AdvancedBanPunishmentSystem(Main main) {
-		super(main);
+	public AdvancedBanPunishmentSystem(NoMuteBypass noMuteBypass) {
+		super(noMuteBypass);
 	}
 
 	@Override

@@ -1,4 +1,4 @@
-package me.xemu.DisableSignsWhileMuted.handler;
+package me.xemu.NoMuteBypass.handler;
 
 import org.bukkit.entity.Player;
 

@@ -1,18 +1,18 @@
-package me.xemu.DisableSignsWhileMuted.handler.punishment;
+package me.xemu.NoMuteBypass.handler.punishment;
 
 import dev.simplix.plugins.punishcontrol.PunishControlAPI;
 import dev.simplix.plugins.punishcontrol.Punishment;
-import me.xemu.DisableSignsWhileMuted.Main;
-import me.xemu.DisableSignsWhileMuted.handler.Handler;
-import me.xemu.DisableSignsWhileMuted.handler.IPunishmentSystem;
+import me.xemu.NoMuteBypass.NoMuteBypass;
+import me.xemu.NoMuteBypass.handler.Handler;
+import me.xemu.NoMuteBypass.handler.IPunishmentSystem;
 import org.bukkit.entity.Player;
 
 import java.util.List;
 
 /* PunishControl by SimplixSoftware */
 public class PunishControlPunishmentSystem extends Handler implements IPunishmentSystem {
-	public PunishControlPunishmentSystem(Main main) {
-		super(main);
+	public PunishControlPunishmentSystem(NoMuteBypass noMuteBypass) {
+		super(noMuteBypass);
 	}
 
 	@Override

@@ -1,10 +1,10 @@
-package me.xemu.DisableSignsWhileMuted.handler.punishment.litebans;
+package me.xemu.NoMuteBypass.handler.punishment.litebans;
 
 import litebans.api.Database;
 import litebans.api.Entry;
 import litebans.api.Events;
-import me.xemu.DisableSignsWhileMuted.Main;
-import me.xemu.DisableSignsWhileMuted.handler.Handler;
+import me.xemu.NoMuteBypass.NoMuteBypass;
+import me.xemu.NoMuteBypass.handler.Handler;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -21,8 +21,8 @@ public class LiteBansListeners extends Handler implements Listener {
 		return mutelist;
 	}
 
-	public LiteBansListeners(Main main) {
-		super(main);
+	public LiteBansListeners(NoMuteBypass noMuteBypass) {
+		super(noMuteBypass);
 
 		Events.get().register(new Events.Listener() {
 
@@ -44,7 +44,7 @@ public class LiteBansListeners extends Handler implements Listener {
 
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event) {
-		if (main.getCore().getSystem() instanceof LiteBansPunishmentSystem) {
+		if (noMuteBypass.getCore().getSystem() instanceof LiteBansPunishmentSystem) {
 			UUID uuid = event.getPlayer().getUniqueId();
 
 			new BukkitRunnable() {
@@ -55,7 +55,7 @@ public class LiteBansListeners extends Handler implements Listener {
 						mutelist.add(uuid);
 					}
 				}
-			}.runTaskAsynchronously(main);
+			}.runTaskAsynchronously(noMuteBypass);
 		}
 	}
 

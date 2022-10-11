@@ -9,3 +9,6 @@ message-staff:
   message: "&c<target> attempted to use a sign, but cannot because they are muted."
 
 disable-book-edit: true
+
+# Important Changelog:
+# [11-October-2022] Disable Signs While Muted was renamed to NoMuteBypass.

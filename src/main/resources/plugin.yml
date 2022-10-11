@@ -1,6 +1,6 @@
-name: DisableSignsWhileMuted
+name: NoMuteBypass
 version: '${project.version}'
-main: me.xemu.DisableSignsWhileMuted.Main
+main: me.xemu.NoMuteBypass.NoMuteBypass
 api-version: 1.19
 description: Disable signs for muted players.
 

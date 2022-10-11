@@ -1,15 +1,15 @@
-package me.xemu.DisableSignsWhileMuted.handler.punishment;
+package me.xemu.NoMuteBypass.handler.punishment;
 
 import me.activated.core.plugin.AquaCoreAPI;
-import me.xemu.DisableSignsWhileMuted.Main;
-import me.xemu.DisableSignsWhileMuted.handler.Handler;
-import me.xemu.DisableSignsWhileMuted.handler.IPunishmentSystem;
+import me.xemu.NoMuteBypass.NoMuteBypass;
+import me.xemu.NoMuteBypass.handler.Handler;
+import me.xemu.NoMuteBypass.handler.IPunishmentSystem;
 import org.bukkit.entity.Player;
 
 /* AquaCore by FaceSlap02 */
 public class AquaCorePunishmentSystem extends Handler implements IPunishmentSystem {
-	public AquaCorePunishmentSystem(Main main) {
-		super(main);
+	public AquaCorePunishmentSystem(NoMuteBypass noMuteBypass) {
+		super(noMuteBypass);
 	}
 
 	@Override

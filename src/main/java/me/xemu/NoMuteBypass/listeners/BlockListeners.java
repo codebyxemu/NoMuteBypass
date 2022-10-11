@@ -1,9 +1,9 @@
-package me.xemu.DisableSignsWhileMuted.listeners;
+package me.xemu.NoMuteBypass.listeners;
 
-import me.xemu.DisableSignsWhileMuted.Main;
-import me.xemu.DisableSignsWhileMuted.handler.Handler;
-import me.xemu.DisableSignsWhileMuted.handler.punishment.litebans.LiteBansListeners;
-import me.xemu.DisableSignsWhileMuted.handler.punishment.litebans.LiteBansPunishmentSystem;
+import me.xemu.NoMuteBypass.NoMuteBypass;
+import me.xemu.NoMuteBypass.handler.Handler;
+import me.xemu.NoMuteBypass.handler.punishment.litebans.LiteBansListeners;
+import me.xemu.NoMuteBypass.handler.punishment.litebans.LiteBansPunishmentSystem;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -19,8 +19,8 @@ import java.util.List;
 public class BlockListeners extends Handler implements Listener {
 
 	private List<Material> signTypes;
-	public BlockListeners(Main main) {
-		super(main);
+	public BlockListeners(NoMuteBypass noMuteBypass) {
+		super(noMuteBypass);
 
 		signTypes = new ArrayList<>();
 
@@ -54,11 +54,11 @@ public class BlockListeners extends Handler implements Listener {
 		Block block = event.getBlock();
 
 		boolean muted = false;
-		if (main.getCore().getSystem() instanceof LiteBansPunishmentSystem) {
+		if (noMuteBypass.getCore().getSystem() instanceof LiteBansPunishmentSystem) {
 			if (LiteBansListeners.getMutelist().contains(player.getUniqueId())) {
 				muted = true;
 			}
-		} else if (main.getCore().getSystem().isMuted(player)) {
+		} else if (noMuteBypass.getCore().getSystem().isMuted(player)) {
 			 muted = true;
 		}
 
@@ -68,11 +68,11 @@ public class BlockListeners extends Handler implements Listener {
 
 		event.setCancelled(true);
 
-		String message = ChatColor.translateAlternateColorCodes('&', main.getConfig().getString("message"));
+		String message = ChatColor.translateAlternateColorCodes('&', noMuteBypass.getConfig().getString("message"));
 		player.sendMessage(message);
 
-		if (main.getConfig().getBoolean("message-staff.enabled")) {
-			String staffMessage = ChatColor.translateAlternateColorCodes('&', main.getConfig().getString("message-staff.message"));
+		if (noMuteBypass.getConfig().getBoolean("message-staff.enabled")) {
+			String staffMessage = ChatColor.translateAlternateColorCodes('&', noMuteBypass.getConfig().getString("message-staff.message"));
 			staffMessage.replaceAll("<target>", player.getName());
 
 			Bukkit.getOnlinePlayers().forEach(staffPlayer -> {

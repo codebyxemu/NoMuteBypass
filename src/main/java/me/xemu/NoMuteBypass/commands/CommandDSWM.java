@@ -1,7 +1,7 @@
-package me.xemu.DisableSignsWhileMuted.commands;
+package me.xemu.NoMuteBypass.commands;
 
-import me.xemu.DisableSignsWhileMuted.Main;
-import me.xemu.DisableSignsWhileMuted.utils.CommandTarget;
+import me.xemu.NoMuteBypass.NoMuteBypass;
+import me.xemu.NoMuteBypass.utils.CommandTarget;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -11,10 +11,10 @@ import org.bukkit.entity.Player;
 
 public class CommandDSWM implements CommandExecutor {
 
-	private Main main;
+	private NoMuteBypass noMuteBypass;
 
-	public CommandDSWM(Main main) {
-		this.main = main;
+	public CommandDSWM(NoMuteBypass noMuteBypass) {
+		this.noMuteBypass = noMuteBypass;
 	}
 
 	@Override
@@ -24,19 +24,19 @@ public class CommandDSWM implements CommandExecutor {
 		Player player = (Player) sender;
 
 		if (args.length == 0) {
-			player.sendMessage(ChatColor.RED + "DisableSignsWhileMuted - Version: " + main
+			player.sendMessage(ChatColor.RED + "DisableSignsWhileMuted - Version: " + noMuteBypass
 					.getDescription().getVersion());
-			player.sendMessage(ChatColor.RED + "Active Punishment System: " + main.getCore().getSystem().getName());
+			player.sendMessage(ChatColor.RED + "Active Punishment System: " + noMuteBypass.getCore().getSystem().getName());
 			return true;
 		} else if (args.length == 1) {
 			if (args[0].equalsIgnoreCase("reload") && player.hasPermission("dswm.reload")) {
 				player.sendMessage(ChatColor.RED + "Reloaded plugin!");
-				main.reloadConfig();
-				main.getCore().handlePunishmentSystem();
+				noMuteBypass.reloadConfig();
+				noMuteBypass.getCore().handlePunishmentSystem();
 			} else {
-				player.sendMessage(ChatColor.RED + "DisableSignsWhileMuted - Version: " + main
+				player.sendMessage(ChatColor.RED + "DisableSignsWhileMuted - Version: " + noMuteBypass
 						.getDescription().getVersion());
-				player.sendMessage(ChatColor.RED + "Active Punishment System: " + main.getCore().getSystem().getName());
+				player.sendMessage(ChatColor.RED + "Active Punishment System: " + noMuteBypass.getCore().getSystem().getName());
 				return true;
 			}
 		} else if (args.length == 2) {
@@ -49,7 +49,7 @@ public class CommandDSWM implements CommandExecutor {
 
 				Player user = target.getPlayer();
 
-				boolean muted = main.getCore().getSystem().isMuted(user);
+				boolean muted = noMuteBypass.getCore().getSystem().isMuted(user);
 				String status = "Not Muted";
 
 				if (muted) {
@@ -59,9 +59,9 @@ public class CommandDSWM implements CommandExecutor {
 				player.sendMessage(ChatColor.RED + user.getName() + " is currently " + status + ".");
 				return true;
 			} else {
-				player.sendMessage(ChatColor.RED + "DisableSignsWhileMuted - Version: " + main
+				player.sendMessage(ChatColor.RED + "DisableSignsWhileMuted - Version: " + noMuteBypass
 						.getDescription().getVersion());
-				player.sendMessage(ChatColor.RED + "Active Punishment System: " + main.getCore().getSystem().getName());
+				player.sendMessage(ChatColor.RED + "Active Punishment System: " + noMuteBypass.getCore().getSystem().getName());
 				return true;
 			}
 		}
