@@ -1,6 +1,6 @@
 package me.xemu.NoMuteBypass;
 
-import me.xemu.NoMuteBypass.handler.core.Core;
+import me.xemu.NoMuteBypass.core.Core;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class NoMuteBypass extends JavaPlugin {

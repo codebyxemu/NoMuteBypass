@@ -2,7 +2,6 @@ package me.xemu.NoMuteBypass.listeners;
 
 import me.xemu.NoMuteBypass.NoMuteBypass;
 import me.xemu.NoMuteBypass.handler.Handler;
-import me.xemu.NoMuteBypass.handler.core.Core;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
