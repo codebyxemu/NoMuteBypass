@@ -4,7 +4,6 @@ import litebans.api.Database;
 import litebans.api.Entry;
 import litebans.api.Events;
 import me.xemu.NoMuteBypass.NoMuteBypass;
-import me.xemu.NoMuteBypass.handler.Handler;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;

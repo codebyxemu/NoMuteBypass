@@ -2,7 +2,6 @@ package me.xemu.NoMuteBypass.handler.punishment;
 
 import dev.phoenix.phoenix.PhoenixAPI;
 import me.xemu.NoMuteBypass.NoMuteBypass;
-import me.xemu.NoMuteBypass.handler.Handler;
 import me.xemu.NoMuteBypass.handler.IPunishmentSystem;
 import org.bukkit.entity.Player;
 

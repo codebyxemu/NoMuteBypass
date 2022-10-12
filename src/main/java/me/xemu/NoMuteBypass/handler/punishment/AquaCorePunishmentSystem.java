@@ -2,7 +2,6 @@ package me.xemu.NoMuteBypass.handler.punishment;
 
 import me.activated.core.plugin.AquaCoreAPI;
 import me.xemu.NoMuteBypass.NoMuteBypass;
-import me.xemu.NoMuteBypass.handler.Handler;
 import me.xemu.NoMuteBypass.handler.IPunishmentSystem;
 import org.bukkit.entity.Player;
 

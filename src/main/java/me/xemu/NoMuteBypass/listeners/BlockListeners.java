@@ -1,7 +1,6 @@
 package me.xemu.NoMuteBypass.listeners;
 
 import me.xemu.NoMuteBypass.NoMuteBypass;
-import me.xemu.NoMuteBypass.handler.Handler;
 import me.xemu.NoMuteBypass.handler.punishment.LiteBansListeners;
 import me.xemu.NoMuteBypass.handler.punishment.LiteBansPunishmentSystem;
 import org.bukkit.Bukkit;
@@ -16,11 +15,12 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BlockListeners extends Handler implements Listener {
+public class BlockListeners implements Listener {
 
+	private NoMuteBypass noMuteBypass;
 	private final List<Material> signTypes;
 	public BlockListeners(NoMuteBypass noMuteBypass) {
-		super(noMuteBypass);
+		this.noMuteBypass = noMuteBypass;
 
 		signTypes = new ArrayList<>();
 

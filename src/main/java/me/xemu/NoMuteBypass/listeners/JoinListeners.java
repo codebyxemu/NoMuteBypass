@@ -1,17 +1,12 @@
 package me.xemu.NoMuteBypass.listeners;
 
 import me.xemu.NoMuteBypass.NoMuteBypass;
-import me.xemu.NoMuteBypass.handler.Handler;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-public class JoinListeners extends Handler implements Listener {
-
-	public JoinListeners(NoMuteBypass noMuteBypass) {
-		super(noMuteBypass);
-	}
+public class JoinListeners implements Listener {
 
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event) {

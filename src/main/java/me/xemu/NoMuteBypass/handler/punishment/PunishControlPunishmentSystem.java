@@ -3,7 +3,6 @@ package me.xemu.NoMuteBypass.handler.punishment;
 import dev.simplix.plugins.punishcontrol.PunishControlAPI;
 import dev.simplix.plugins.punishcontrol.Punishment;
 import me.xemu.NoMuteBypass.NoMuteBypass;
-import me.xemu.NoMuteBypass.handler.Handler;
 import me.xemu.NoMuteBypass.handler.IPunishmentSystem;
 import org.bukkit.entity.Player;
 

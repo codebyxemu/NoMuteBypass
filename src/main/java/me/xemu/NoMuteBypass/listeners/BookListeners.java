@@ -1,16 +1,16 @@
 package me.xemu.NoMuteBypass.listeners;
 
 import me.xemu.NoMuteBypass.NoMuteBypass;
-import me.xemu.NoMuteBypass.handler.Handler;
 import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerEditBookEvent;
 
-public class BookListeners extends Handler implements Listener {
+public class BookListeners implements Listener {
 
+	private NoMuteBypass noMuteBypass;
 	public BookListeners(NoMuteBypass noMuteBypass) {
-		super(noMuteBypass);
+		this.noMuteBypass = noMuteBypass;
 	}
 
 	@EventHandler

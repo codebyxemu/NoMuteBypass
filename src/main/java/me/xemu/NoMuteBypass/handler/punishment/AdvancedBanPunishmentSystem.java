@@ -3,7 +3,6 @@ package me.xemu.NoMuteBypass.handler.punishment;
 import me.leoko.advancedban.manager.PunishmentManager;
 import me.leoko.advancedban.manager.UUIDManager;
 import me.xemu.NoMuteBypass.NoMuteBypass;
-import me.xemu.NoMuteBypass.handler.Handler;
 import me.xemu.NoMuteBypass.handler.IPunishmentSystem;
 import org.bukkit.entity.Player;
 
