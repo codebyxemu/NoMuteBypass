@@ -1,4 +1,4 @@
-package me.xemu.NoMuteBypass.handler.punishment.litebans;
+package me.xemu.NoMuteBypass.handler.punishment;
 
 import me.xemu.NoMuteBypass.NoMuteBypass;
 import me.xemu.NoMuteBypass.handler.Handler;

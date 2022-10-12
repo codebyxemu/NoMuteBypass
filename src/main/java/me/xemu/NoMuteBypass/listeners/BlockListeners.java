@@ -2,8 +2,8 @@ package me.xemu.NoMuteBypass.listeners;
 
 import me.xemu.NoMuteBypass.NoMuteBypass;
 import me.xemu.NoMuteBypass.handler.Handler;
-import me.xemu.NoMuteBypass.handler.punishment.litebans.LiteBansListeners;
-import me.xemu.NoMuteBypass.handler.punishment.litebans.LiteBansPunishmentSystem;
+import me.xemu.NoMuteBypass.handler.punishment.LiteBansListeners;
+import me.xemu.NoMuteBypass.handler.punishment.LiteBansPunishmentSystem;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -18,7 +18,7 @@ import java.util.List;
 
 public class BlockListeners extends Handler implements Listener {
 
-	private List<Material> signTypes;
+	private final List<Material> signTypes;
 	public BlockListeners(NoMuteBypass noMuteBypass) {
 		super(noMuteBypass);
 

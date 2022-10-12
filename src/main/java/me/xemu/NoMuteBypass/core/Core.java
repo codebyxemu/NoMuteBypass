@@ -1,4 +1,4 @@
-package me.xemu.NoMuteBypass.handler.core;
+package me.xemu.NoMuteBypass.core;
 
 import me.xemu.NoMuteBypass.NoMuteBypass;
 import me.xemu.NoMuteBypass.handler.IPunishmentSystem;
@@ -6,8 +6,8 @@ import me.xemu.NoMuteBypass.commands.CommandDSWM;
 import me.xemu.NoMuteBypass.handler.punishment.*;
 import me.xemu.NoMuteBypass.listeners.BlockListeners;
 import me.xemu.NoMuteBypass.listeners.BookListeners;
-import me.xemu.NoMuteBypass.handler.punishment.litebans.LiteBansListeners;
-import me.xemu.NoMuteBypass.handler.punishment.litebans.LiteBansPunishmentSystem;
+import me.xemu.NoMuteBypass.handler.punishment.LiteBansListeners;
+import me.xemu.NoMuteBypass.handler.punishment.LiteBansPunishmentSystem;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.command.ConsoleCommandSender;
