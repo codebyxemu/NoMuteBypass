@@ -6,7 +6,7 @@
 
     <groupId>me.Xemu.NoMuteBypass</groupId>
     <artifactId>NoMuteBypass</artifactId>
-    <version>v2.0.0</version>
+    <version>v2.0.1</version>
     <packaging>jar</packaging>
 
     <name>NoMuteBypass</name>
