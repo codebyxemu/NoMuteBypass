@@ -1,9 +1,9 @@
-package me.xemu.NoMuteBypass.handler.punishment;
+package io.github.codebyxemu.nomutebypass.handler.punishment;
 
+import io.github.codebyxemu.nomutebypass.NoMuteBypass;
 import litebans.api.Database;
 import litebans.api.Entry;
 import litebans.api.Events;
-import me.xemu.NoMuteBypass.NoMuteBypass;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -12,7 +12,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class LiteBansListeners extends Handler implements Listener {
+public class LiteBansListeners implements Listener {
 
 	private static ArrayList<UUID> mutelist = new ArrayList<>();
 
@@ -20,8 +20,10 @@ public class LiteBansListeners extends Handler implements Listener {
 		return mutelist;
 	}
 
+	private final NoMuteBypass noMuteBypass;
+
 	public LiteBansListeners(NoMuteBypass noMuteBypass) {
-		super(noMuteBypass);
+		this.noMuteBypass = noMuteBypass;
 
 		Events.get().register(new Events.Listener() {
 
@@ -43,7 +45,7 @@ public class LiteBansListeners extends Handler implements Listener {
 
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event) {
-		if (noMuteBypass.getCore().getSystem() instanceof LiteBansPunishmentSystem) {
+		if (noMuteBypass.getSystem() instanceof LiteBansPunishmentSystem) {
 			UUID uuid = event.getPlayer().getUniqueId();
 
 			new BukkitRunnable() {

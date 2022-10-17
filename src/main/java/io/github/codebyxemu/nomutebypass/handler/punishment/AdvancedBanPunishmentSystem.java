@@ -1,16 +1,13 @@
-package me.xemu.NoMuteBypass.handler.punishment;
+package io.github.codebyxemu.nomutebypass.handler.punishment;
 
+import io.github.codebyxemu.nomutebypass.NoMuteBypass;
 import me.leoko.advancedban.manager.PunishmentManager;
 import me.leoko.advancedban.manager.UUIDManager;
-import me.xemu.NoMuteBypass.NoMuteBypass;
-import me.xemu.NoMuteBypass.handler.IPunishmentSystem;
+import io.github.codebyxemu.nomutebypass.handler.IPunishmentSystem;
 import org.bukkit.entity.Player;
 
 /* AdvancedBan by Leoko.dev */
-public class AdvancedBanPunishmentSystem extends Handler implements IPunishmentSystem {
-	public AdvancedBanPunishmentSystem(NoMuteBypass noMuteBypass) {
-		super(noMuteBypass);
-	}
+public class AdvancedBanPunishmentSystem implements IPunishmentSystem {
 
 	@Override
 	public String getName() {

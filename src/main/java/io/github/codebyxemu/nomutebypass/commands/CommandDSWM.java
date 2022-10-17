@@ -1,7 +1,7 @@
-package me.xemu.NoMuteBypass.commands;
+package io.github.codebyxemu.nomutebypass.commands;
 
-import me.xemu.NoMuteBypass.NoMuteBypass;
-import me.xemu.NoMuteBypass.utils.CommandTarget;
+import io.github.codebyxemu.nomutebypass.NoMuteBypass;
+import io.github.codebyxemu.nomutebypass.utils.CommandTarget;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -26,17 +26,17 @@ public class CommandDSWM implements CommandExecutor {
 		if (args.length == 0) {
 			player.sendMessage(ChatColor.RED + "DisableSignsWhileMuted - Version: " + noMuteBypass
 					.getDescription().getVersion());
-			player.sendMessage(ChatColor.RED + "Active Punishment System: " + noMuteBypass.getCore().getSystem().getName());
+			player.sendMessage(ChatColor.RED + "Active Punishment System: " + noMuteBypass.getSystem().getName());
 			return true;
 		} else if (args.length == 1) {
 			if (args[0].equalsIgnoreCase("reload") && player.hasPermission("dswm.reload")) {
 				player.sendMessage(ChatColor.RED + "Reloaded plugin!");
 				noMuteBypass.reloadConfig();
-				noMuteBypass.getCore().handlePunishmentSystem();
+				noMuteBypass.handlePunishmentSystem();
 			} else {
 				player.sendMessage(ChatColor.RED + "DisableSignsWhileMuted - Version: " + noMuteBypass
 						.getDescription().getVersion());
-				player.sendMessage(ChatColor.RED + "Active Punishment System: " + noMuteBypass.getCore().getSystem().getName());
+				player.sendMessage(ChatColor.RED + "Active Punishment System: " + noMuteBypass.getSystem().getName());
 				return true;
 			}
 		} else if (args.length == 2) {
@@ -49,7 +49,7 @@ public class CommandDSWM implements CommandExecutor {
 
 				Player user = target.getPlayer();
 
-				boolean muted = noMuteBypass.getCore().getSystem().isMuted(user);
+				boolean muted = noMuteBypass.getSystem().isMuted(user);
 				String status = "Not Muted";
 
 				if (muted) {
@@ -61,7 +61,7 @@ public class CommandDSWM implements CommandExecutor {
 			} else {
 				player.sendMessage(ChatColor.RED + "DisableSignsWhileMuted - Version: " + noMuteBypass
 						.getDescription().getVersion());
-				player.sendMessage(ChatColor.RED + "Active Punishment System: " + noMuteBypass.getCore().getSystem().getName());
+				player.sendMessage(ChatColor.RED + "Active Punishment System: " + noMuteBypass.getSystem().getName());
 				return true;
 			}
 		}

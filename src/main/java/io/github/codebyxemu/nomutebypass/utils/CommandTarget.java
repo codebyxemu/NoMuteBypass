@@ -1,4 +1,4 @@
-package me.xemu.NoMuteBypass.utils;
+package io.github.codebyxemu.nomutebypass.utils;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;

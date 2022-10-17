@@ -1,8 +1,8 @@
-package me.xemu.NoMuteBypass.listeners;
+package io.github.codebyxemu.nomutebypass.listeners;
 
-import me.xemu.NoMuteBypass.NoMuteBypass;
-import me.xemu.NoMuteBypass.handler.punishment.LiteBansListeners;
-import me.xemu.NoMuteBypass.handler.punishment.LiteBansPunishmentSystem;
+import io.github.codebyxemu.nomutebypass.NoMuteBypass;
+import io.github.codebyxemu.nomutebypass.handler.punishment.LiteBansListeners;
+import io.github.codebyxemu.nomutebypass.handler.punishment.LiteBansPunishmentSystem;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -18,6 +18,7 @@ import java.util.List;
 public class BlockListeners implements Listener {
 
 	private NoMuteBypass noMuteBypass;
+
 	private final List<Material> signTypes;
 	public BlockListeners(NoMuteBypass noMuteBypass) {
 		this.noMuteBypass = noMuteBypass;
@@ -54,11 +55,11 @@ public class BlockListeners implements Listener {
 		Block block = event.getBlock();
 
 		boolean muted = false;
-		if (noMuteBypass.getCore().getSystem() instanceof LiteBansPunishmentSystem) {
+		if (noMuteBypass.getSystem() instanceof LiteBansPunishmentSystem) {
 			if (LiteBansListeners.getMutelist().contains(player.getUniqueId())) {
 				muted = true;
 			}
-		} else if (noMuteBypass.getCore().getSystem().isMuted(player)) {
+		} else if (noMuteBypass.getSystem().isMuted(player)) {
 			 muted = true;
 		}
 
@@ -81,8 +82,6 @@ public class BlockListeners implements Listener {
 				}
 			});
 		}
-
-		return;
 	}
 
 }
