@@ -1,7 +1,7 @@
-package me.xemu.NoMuteBypass.handler.punishment;
+package io.github.codebyxemu.nomutebypass.handler.punishment;
 
-import me.xemu.NoMuteBypass.NoMuteBypass;
-import me.xemu.NoMuteBypass.handler.IPunishmentSystem;
+import io.github.codebyxemu.nomutebypass.NoMuteBypass;
+import io.github.codebyxemu.nomutebypass.handler.IPunishmentSystem;
 import org.bukkit.entity.Player;
 import space.arim.libertybans.api.LibertyBans;
 import space.arim.libertybans.api.NetworkAddress;
@@ -13,13 +13,12 @@ import space.arim.omnibus.OmnibusProvider;
 import java.util.Optional;
 
 /* LibertyBans by A248*/
-public class LibertyBansPunishmentSystem extends Handler implements IPunishmentSystem {
+public class LibertyBansPunishmentSystem implements IPunishmentSystem {
 
 	private Omnibus omnibus;
 	private LibertyBans libertyBans;
 
-	public LibertyBansPunishmentSystem(NoMuteBypass noMuteBypass) {
-		super(noMuteBypass);
+	public LibertyBansPunishmentSystem() {
 		this.omnibus = OmnibusProvider.getOmnibus();
 		this.libertyBans = omnibus.getRegistry().getProvider(LibertyBans.class).get();
 	}

@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>me.Xemu.NoMuteBypass</groupId>
+    <groupId>io.github.codebyxemu.nomutebypass</groupId>
     <artifactId>NoMuteBypass</artifactId>
     <version>v2.0.1</version>
     <packaging>jar</packaging>
@@ -25,6 +25,7 @@
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
+                    <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
             <plugin>
@@ -150,14 +151,14 @@
             <artifactId>dependency-pxApi</artifactId>
             <version>dependency-build</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/local_dependencies/pxAPI.jar</systemPath>
+            <systemPath>${project.basedir}/lib/Phoenix-API.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>me.Xemu.NoMuteBypass.Dependency</groupId>
             <artifactId>dependency-AquaCoreAPI</artifactId>
             <version>dependency-build</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/local_dependencies/AquaCoreAPI.jar</systemPath>
+            <systemPath>${project.basedir}/lib/AquaCoreAPI.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.bstats</groupId>
@@ -169,6 +170,12 @@
             <groupId>dev.simplix.plugins</groupId>
             <artifactId>punishcontrol-api</artifactId>
             <version>2.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

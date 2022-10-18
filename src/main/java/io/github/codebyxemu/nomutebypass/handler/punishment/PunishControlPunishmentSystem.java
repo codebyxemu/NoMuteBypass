@@ -1,18 +1,15 @@
-package me.xemu.NoMuteBypass.handler.punishment;
+package io.github.codebyxemu.nomutebypass.handler.punishment;
 
 import dev.simplix.plugins.punishcontrol.PunishControlAPI;
 import dev.simplix.plugins.punishcontrol.Punishment;
-import me.xemu.NoMuteBypass.NoMuteBypass;
-import me.xemu.NoMuteBypass.handler.IPunishmentSystem;
+import io.github.codebyxemu.nomutebypass.NoMuteBypass;
+import io.github.codebyxemu.nomutebypass.handler.IPunishmentSystem;
 import org.bukkit.entity.Player;
 
 import java.util.List;
 
 /* PunishControl by SimplixSoftware */
-public class PunishControlPunishmentSystem extends Handler implements IPunishmentSystem {
-	public PunishControlPunishmentSystem(NoMuteBypass noMuteBypass) {
-		super(noMuteBypass);
-	}
+public class PunishControlPunishmentSystem implements IPunishmentSystem {
 
 	@Override
 	public String getName() {

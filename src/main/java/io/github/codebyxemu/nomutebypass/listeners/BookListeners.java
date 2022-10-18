@@ -1,6 +1,6 @@
-package me.xemu.NoMuteBypass.listeners;
+package io.github.codebyxemu.nomutebypass.listeners;
 
-import me.xemu.NoMuteBypass.NoMuteBypass;
+import io.github.codebyxemu.nomutebypass.NoMuteBypass;
 import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -8,7 +8,8 @@ import org.bukkit.event.player.PlayerEditBookEvent;
 
 public class BookListeners implements Listener {
 
-	private NoMuteBypass noMuteBypass;
+	private final NoMuteBypass noMuteBypass;
+
 	public BookListeners(NoMuteBypass noMuteBypass) {
 		this.noMuteBypass = noMuteBypass;
 	}
@@ -17,11 +18,10 @@ public class BookListeners implements Listener {
 	public void onPlayerEditBook(PlayerEditBookEvent event) {
 
 		if (noMuteBypass.getConfig().getBoolean("disable-book-edit")) {
-			if (noMuteBypass.getCore().getSystem().isMuted(event.getPlayer())) {
-				event.setCancelled(true);
+			if (noMuteBypass.getSystem().isMuted(event.getPlayer())) {
 				event.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&',
-						noMuteBypass.getConfig().getString("message"))
-				);
+						this.noMuteBypass.getConfig().getString("message")));
+				event.setCancelled(true);
 			}
 		}
 
