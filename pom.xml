@@ -6,7 +6,7 @@
 
     <groupId>io.github.codebyxemu.nomutebypass</groupId>
     <artifactId>NoMuteBypass</artifactId>
-    <version>v2.0.1</version>
+    <version>v2.0.2</version>
     <packaging>jar</packaging>
 
     <name>NoMuteBypass</name>
@@ -53,7 +53,11 @@
                         <relocation>
                             <pattern>org.bstats</pattern>
                             <!-- Replace this with your package! -->
-                            <shadedPattern>me.xemu</shadedPattern>
+                            <shadedPattern>io.github.codebyxemu.stats</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>com.jeff_media.updatechecker</pattern>
+                            <shadedPattern>io.github.codebyxemu.updatechecker</shadedPattern>
                         </relocation>
                     </relocations>
                 </configuration>
@@ -108,13 +112,18 @@
             <id>networkmanager-repo</id>
             <url>https://repo.networkmanager.xyz/repository/maven-public/</url>
         </repository>
+        <!-- For update checker -->
+        <repository>
+            <id>jeff-media-public</id>
+            <url>https://hub.jeff-media.com/nexus/repository/jeff-media-public/</url>
+        </repository>
     </repositories>
 
     <dependencies>
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.19.2-R0.1-SNAPSHOT</version>
+            <version>1.19.4-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -147,20 +156,6 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>me.Xemu.NoMuteBypass.Dependency</groupId>
-            <artifactId>dependency-pxApi</artifactId>
-            <version>dependency-build</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/Phoenix-API.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>me.Xemu.NoMuteBypass.Dependency</groupId>
-            <artifactId>dependency-AquaCoreAPI</artifactId>
-            <version>dependency-build</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/AquaCoreAPI.jar</systemPath>
-        </dependency>
-        <dependency>
             <groupId>org.bstats</groupId>
             <artifactId>bstats-bukkit</artifactId>
             <version>3.0.0</version>
@@ -177,6 +172,12 @@
             <artifactId>lombok</artifactId>
             <version>1.18.24</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.jeff_media</groupId>
+            <artifactId>SpigotUpdateChecker</artifactId>
+            <version>3.0.3</version> <!-- Check on GitHub for the latest version -->
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>

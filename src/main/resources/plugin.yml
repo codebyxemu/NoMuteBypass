@@ -1,6 +1,6 @@
 name: NoMuteBypass
 version: '${project.version}'
-main: me.xemu.NoMuteBypass.NoMuteBypass
+main: io.github.codebyxemu.nomutebypass.NoMuteBypass
 api-version: 1.19
 description: Disable signs for muted players.
 

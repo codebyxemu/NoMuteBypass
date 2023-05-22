@@ -1,5 +1,7 @@
 package io.github.codebyxemu.nomutebypass;
 
+import com.jeff_media.updatechecker.UpdateCheckSource;
+import com.jeff_media.updatechecker.UpdateChecker;
 import io.github.codebyxemu.nomutebypass.commands.CommandDSWM;
 import io.github.codebyxemu.nomutebypass.handler.IPunishmentSystem;
 import io.github.codebyxemu.nomutebypass.handler.punishment.*;
@@ -19,6 +21,8 @@ import java.util.HashMap;
 public class NoMuteBypass extends JavaPlugin {
 
 	private Config config;
+
+	private static final int SPIGOT_RESOURCE_ID = 105505;
 
 	public void onEnable() {
 		this.config = new Config(this, "config");
@@ -75,9 +79,7 @@ public class NoMuteBypass extends JavaPlugin {
 
 		systems.put("Essentials", new EssentialsPunishmentSystem(this));
 		systems.put("LiteBans", new LiteBansPunishmentSystem());
-		systems.put("PhoenixCore", new PhoenixPunishmentSystem());
 		systems.put("AdvancedBan", new AdvancedBanPunishmentSystem());
-		systems.put("AquaCore", new AquaCorePunishmentSystem());
 		systems.put("LibertyBans", new LibertyBansPunishmentSystem());
 		systems.put("PunishControl", new PunishControlPunishmentSystem());
 
@@ -117,6 +119,11 @@ public class NoMuteBypass extends JavaPlugin {
 		final int pluginId = 16644;
 		final Metrics metrics = new Metrics(plugin, pluginId);
 		log("bStats handling completed.");
+	}
+	
+	public void updateChecker() {
+		new UpdateChecker(this, UpdateCheckSource.SPIGOT, String.valueOf(SPIGOT_RESOURCE_ID))
+				.checkNow();
 	}
 
 	public void onDisable() {
